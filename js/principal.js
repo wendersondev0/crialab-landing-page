@@ -97,8 +97,6 @@ if (formulario) {
       `Telefone: ${String(dados.get("telefone") || "").trim() || "não informado"}`,
       `Tipo: ${tipo}`,
       `Peça: ${String(dados.get("peca") || "").trim() || "não informada"}`,
-      `Material: ${String(dados.get("material") || "").trim()}`,
-      `Pintura: ${String(dados.get("pintura") || "").trim()}`,
       `Quantidade: ${String(dados.get("quantidade") || "").trim() || "1"}`,
       `Mensagem: ${mensagem}`
     ].join("\n");
@@ -111,3 +109,29 @@ if (formulario) {
     ok.hidden = false;
   });
 }
+
+const visor = document.querySelector("[data-visor]");
+const visorImagem = visor?.querySelector("img");
+const fecharVisor = document.querySelector("[data-fechar]");
+
+document.querySelectorAll("[data-ampliar]").forEach((botao) => {
+  botao.addEventListener("click", () => {
+    const imagem = botao.querySelector("img");
+    if (!visor || !visorImagem || !imagem) {
+      return;
+    }
+    visorImagem.src = imagem.currentSrc || imagem.src;
+    visorImagem.alt = imagem.alt;
+    visor.showModal();
+  });
+});
+
+fecharVisor?.addEventListener("click", () => {
+  visor?.close();
+});
+
+visor?.addEventListener("click", (evento) => {
+  if (evento.target === visor) {
+    visor.close();
+  }
+});

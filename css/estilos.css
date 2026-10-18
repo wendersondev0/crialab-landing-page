@@ -329,6 +329,94 @@ h3 {
   font-weight: 600;
 }
 
+.hero-foto {
+  margin: 0;
+  overflow: hidden;
+  border: 2.5px solid var(--linha);
+  border-radius: 1.6rem;
+  background: var(--branco);
+  box-shadow: var(--sombra);
+}
+
+.hero-foto img {
+  width: 100%;
+  height: min(78vw, 34rem);
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.galeria {
+  display: grid;
+  gap: 1rem;
+}
+
+.peca {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: var(--tinta);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+}
+
+.peca img {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+}
+
+.peca span {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem 1.05rem;
+}
+
+.peca strong {
+  font-family: var(--display);
+  font-size: 1.2rem;
+}
+
+.secao-tinta .cartao {
+  color: var(--tinta);
+}
+
+.visor {
+  width: min(92vw, 52rem);
+  padding: 0.75rem;
+  border: 2.5px solid var(--linha);
+  border-radius: 1.2rem;
+  background: var(--creme);
+}
+
+.visor img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  background: var(--branco);
+}
+
+.visor::backdrop {
+  background: rgba(28, 36, 48, 0.72);
+}
+
+.visor-fechar {
+  min-height: 44px;
+  margin-bottom: 0.6rem;
+  padding: 0.4rem 0.9rem;
+  border: 2px solid var(--linha);
+  border-radius: 999px;
+  background: var(--branco);
+  color: var(--tinta);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .hero-visual {
   position: relative;
   min-height: 22rem;
@@ -773,6 +861,7 @@ textarea:user-invalid,
   }
 
   .servicos,
+  .galeria,
   .materiais,
   .pinturas,
   .maquinas,
@@ -780,6 +869,10 @@ textarea:user-invalid,
   .cupons,
   .rodape-grade {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-foto img {
+    height: 32rem;
   }
 
   .campo-par,
@@ -812,16 +905,7 @@ textarea:user-invalid,
   }
 
   .servicos {
-    grid-template-columns: 1.3fr 1fr 1fr;
-  }
-
-  .servico-largo {
-    grid-column: 1;
-    grid-row: span 2;
-  }
-
-  .servicos .servico:last-child {
-    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .materiais,
@@ -831,8 +915,9 @@ textarea:user-invalid,
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .passos {
-    grid-template-columns: repeat(5, 1fr);
+  .passos,
+  .galeria {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .redes {

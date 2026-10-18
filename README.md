@@ -1,6 +1,6 @@
 # Cria Lab DM — landing page
 
-Página estática da oficina de impressão 3D. HTML, CSS e JavaScript, sem build.
+Página estática da Cria Lab DM para quem quer encomendar um objeto. HTML, CSS e JavaScript, sem build.
 
 Abra `index.html` no navegador ou sirva a pasta com qualquer servidor estático.
 
